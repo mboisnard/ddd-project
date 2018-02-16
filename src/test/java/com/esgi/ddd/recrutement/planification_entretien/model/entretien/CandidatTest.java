@@ -16,32 +16,32 @@ public class CandidatTest {
     private final Profil OTHER_PROFIL = new Profil("C#", 3.);
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateCandidatWhenFirstnameIsNull() {
+    public void whenFirstnameIsNullThenCandidatShouldNotBeCreated() {
         new Candidat(null, MOCK_LASTNAME, MOCK_PROFIL);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateCandidatWhenFirstnameIsEmpty() {
+    public void whenFirstnameIsEmptyThenCandidatShouldNotBeCreated() {
         new Candidat("", MOCK_LASTNAME, MOCK_PROFIL);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateCandidatWhenLastnameIsNull() {
+    public void whenLastnameIsNullThenCandidatShouldNotBeCreated() {
         new Candidat(MOCK_FIRSTNAME, null, MOCK_PROFIL);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateCandidatWhenLastnameIsEmpty() {
+    public void whenLastnameIsEmptyThenCandidatShouldNotBeCreated() {
         new Candidat(MOCK_FIRSTNAME, "", MOCK_PROFIL);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateCandidatWhenProfilIsNull() {
+    public void whenProfilIsNullThenCandidatShouldNotBeCreated() {
         new Candidat(MOCK_FIRSTNAME, MOCK_LASTNAME, null);
     }
 
     @Test
-    public void shouldCreateProfil() {
+    public void whenAttributesAreValidThenCandidatShouldBeCreated() {
         final Candidat candidat = new Candidat(MOCK_FIRSTNAME, MOCK_LASTNAME, MOCK_PROFIL);
 
         assertEquals(MOCK_FIRSTNAME, candidat.getFirstname());
@@ -50,7 +50,7 @@ public class CandidatTest {
     }
 
     @Test
-    public void shouldCompareIdentical() {
+    public void whenComparingCandidatWithSameAttributesThenItShouldReturnTrue() {
         final Candidat first = new Candidat(MOCK_FIRSTNAME, MOCK_LASTNAME, MOCK_PROFIL);
         final Candidat second = new Candidat(MOCK_FIRSTNAME, MOCK_LASTNAME, MOCK_PROFIL);
 
@@ -58,7 +58,7 @@ public class CandidatTest {
     }
 
     @Test
-    public void shouldCompareNotIdentical() {
+    public void whenComparingCandidatWithAtLeastOneDifferentAttributeThenItShouldReturnFalse() {
         final Candidat origin = new Candidat(MOCK_FIRSTNAME, MOCK_LASTNAME, MOCK_PROFIL);
 
         final Candidat differentFirstname = new Candidat(OTHER_FIRSTNAME, MOCK_LASTNAME, MOCK_PROFIL);

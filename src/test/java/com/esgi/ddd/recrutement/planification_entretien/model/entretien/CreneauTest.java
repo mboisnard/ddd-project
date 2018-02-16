@@ -40,23 +40,23 @@ public class CreneauTest {
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateCreneauWhenStartDateIsNull() {
+    public void whenStartDateIsNullThenCreneauShouldNotBeCreated() {
         new Creneau(null, MOCK_DURATION);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateCreneauWhenDurationIsNull() {
+    public void whenDurationIsNullThenCreneauShouldNotBeCreated() {
         new Creneau(MOCK_START_DATE, null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateCreneauWhenDurationIsNegative() {
+    public void whenDurationIsNegativeThenCreneauShouldNotBeCreated() {
         Duration duration = Duration.ofHours(-1L);
         new Creneau(MOCK_START_DATE, duration);
     }
 
     @Test
-    public void shouldCreateCreneau() {
+    public void whenAttributesAreValidThenCreneauShouldBeCreated() {
         Creneau creneau = new Creneau(MOCK_START_DATE, MOCK_DURATION);
 
         assertEquals(creneau.getStartDate(), MOCK_START_DATE);
@@ -64,7 +64,7 @@ public class CreneauTest {
     }
 
     @Test
-    public void shouldCollideWithCreneau() {
+    public void whenCreneauOverlapThenCollidesWithShouldReturnTrue() {
         Creneau creneau = new Creneau(MOCK_START_DATE, MOCK_DURATION);
         Creneau collidingCreneau = new Creneau(MOCK_START_DATE, MOCK_DURATION);
 
@@ -74,7 +74,7 @@ public class CreneauTest {
     }
 
     @Test
-    public void shouldNotCollideWithCreneau() {
+    public void whenCreneauDoNotOverlapThenCollidesWithShouldReturnFalse() {
         Creneau creneau = new Creneau(MOCK_START_DATE, MOCK_DURATION);
         Creneau notCollidingCreneau = new Creneau(NOT_COLLIDING_START_DATE, MOCK_DURATION);
 
