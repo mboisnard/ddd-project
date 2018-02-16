@@ -1,6 +1,5 @@
-package com.esgi.ddd.recrutement.infrastructure;
+package com.esgi.ddd.recrutement.core.infrastructure;
 
-import com.esgi.ddd.recrutement.core.infrastructure.LongIdentityProvider;
 import com.esgi.ddd.recrutement.core.model.IdentityProvider;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 package com.esgi.ddd.recrutement.planification_entretien.infrastructure.entretien;
 
-import com.esgi.ddd.recrutement.planification_entretien.model.ConsultantRecruteur;
+import com.esgi.ddd.recrutement.planification_entretien.model.entretien.ConsultantRecruteur;
 import com.esgi.ddd.recrutement.planification_entretien.model.entretien.Entretien;
 
 import java.util.List;
