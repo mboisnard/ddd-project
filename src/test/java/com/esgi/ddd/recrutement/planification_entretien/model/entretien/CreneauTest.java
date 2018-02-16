@@ -16,14 +16,14 @@ import static org.junit.Assert.assertEquals;
 
 public class CreneauTest {
 
-    private final Date VALID_START_DATE = Date.from(
+    private final Date MOCK_START_DATE = Date.from(
             LocalDateTime.of(
                 LocalDate.of(1993, AUGUST, 4),
                 LocalTime.of(0, 25)
             ).toInstant(UTC)
     );
 
-    private final Date VALID_END_DATE = Date.from(
+    private final Date MOCK_END_DATE = Date.from(
             LocalDateTime.of(
                     LocalDate.of(1993, AUGUST, 4),
                     LocalTime.of(1, 25)
@@ -37,37 +37,37 @@ public class CreneauTest {
             ).toInstant(UTC)
     );
 
-    private final Duration VALID_DURATION = Duration.ofHours(1L);
+    private final Duration MOCK_DURATION = Duration.ofHours(1L);
 
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldNotCreateCreneauWhenStartDateIsNull() {
-        new Creneau(null, VALID_DURATION);
+        new Creneau(null, MOCK_DURATION);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldNotCreateCreneauWhenDurationIsNull() {
-        new Creneau(VALID_START_DATE, null);
+        new Creneau(MOCK_START_DATE, null);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldNotCreateCreneauWhenDurationIsNegative() {
         Duration duration = Duration.ofHours(-1L);
-        new Creneau(VALID_START_DATE, duration);
+        new Creneau(MOCK_START_DATE, duration);
     }
 
     @Test
     public void shouldCreateCreneau() {
-        Creneau creneau = new Creneau(VALID_START_DATE, VALID_DURATION);
+        Creneau creneau = new Creneau(MOCK_START_DATE, MOCK_DURATION);
 
-        assertEquals(creneau.getStartDate(), VALID_START_DATE);
-        assertEquals(creneau.getEndDate(), VALID_END_DATE);
+        assertEquals(creneau.getStartDate(), MOCK_START_DATE);
+        assertEquals(creneau.getEndDate(), MOCK_END_DATE);
     }
 
     @Test
     public void shouldCollideWithCreneau() {
-        Creneau creneau = new Creneau(VALID_START_DATE, VALID_DURATION);
-        Creneau collidingCreneau = new Creneau(VALID_START_DATE, VALID_DURATION);
+        Creneau creneau = new Creneau(MOCK_START_DATE, MOCK_DURATION);
+        Creneau collidingCreneau = new Creneau(MOCK_START_DATE, MOCK_DURATION);
 
         boolean collides = creneau.collidesWith(collidingCreneau);
 
@@ -76,8 +76,8 @@ public class CreneauTest {
 
     @Test
     public void shouldNotCollideWithCreneau() {
-        Creneau creneau = new Creneau(VALID_START_DATE, VALID_DURATION);
-        Creneau notCollidingCreneau = new Creneau(NOT_COLLIDING_START_DATE, VALID_DURATION);
+        Creneau creneau = new Creneau(MOCK_START_DATE, MOCK_DURATION);
+        Creneau notCollidingCreneau = new Creneau(NOT_COLLIDING_START_DATE, MOCK_DURATION);
 
         boolean collides = creneau.collidesWith(notCollidingCreneau);
 

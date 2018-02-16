@@ -12,9 +12,9 @@ public class Profil extends ValueObject {
 	private final Double experience;
 	
 	public Profil(final String skill, final Double experience) {
-		if(skill == null || skill.isEmpty())
+		if (skill == null || skill.isEmpty())
 			throw new IllegalArgumentException("skill cannot be null or empty");
-		if(experience == null || experience < 0.)
+		if (experience == null || experience < 0.)
 			throw new IllegalArgumentException("experience cannot be null or negative");
 		
 		this.skill = skill;
