@@ -1,4 +1,4 @@
-package com.esgi.ddd.recrutement.planification_entretien.model;
+package com.esgi.ddd.recrutement.planification_entretien.model.entretien;
 
 import org.junit.Test;
 
@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
 
+import static java.time.Month.AUGUST;
 import static java.time.Month.DECEMBER;
-import static java.time.Month.FEBRUARY;
 import static java.time.ZoneOffset.UTC;
 import static org.junit.Assert.assertEquals;
 
@@ -17,27 +17,26 @@ public class CreneauTest {
 
     private final Date VALID_START_DATE = Date.from(
             LocalDateTime.of(
-                LocalDate.of(2018, FEBRUARY, 1),
-                LocalTime.of(14, 0)
-            ).toInstant(UTC)
-    );
-
-    private final Date NOT_COLLIDING_START_DATE = Date.from(
-            LocalDateTime.of(
-                    LocalDate.of(2018, DECEMBER, 24),
-                    LocalTime.of(14, 0)
+                LocalDate.of(1993, AUGUST, 4),
+                LocalTime.of(0, 25)
             ).toInstant(UTC)
     );
 
     private final Date VALID_END_DATE = Date.from(
             LocalDateTime.of(
-                    LocalDate.of(2018, FEBRUARY, 1),
-                    LocalTime.of(15, 0)
+                    LocalDate.of(1993, AUGUST, 4),
+                    LocalTime.of(1, 25)
+            ).toInstant(UTC)
+    );
+
+    private final Date NOT_COLLIDING_START_DATE = Date.from(
+            LocalDateTime.of(
+                    LocalDate.of(1994, DECEMBER, 24),
+                    LocalTime.of(17, 20)
             ).toInstant(UTC)
     );
 
     private final Duration VALID_DURATION = Duration.ofHours(1L);
-
 
 
     @Test(expected = IllegalArgumentException.class)
