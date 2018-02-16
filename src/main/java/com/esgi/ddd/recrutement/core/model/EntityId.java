@@ -1,8 +1,10 @@
 package com.esgi.ddd.recrutement.core.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
+@EqualsAndHashCode(callSuper = false)
 public abstract class EntityId extends ValueObject {
 	
 	private final Long id;

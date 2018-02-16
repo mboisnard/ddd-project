@@ -16,7 +16,7 @@ import java.util.Optional;
 @EqualsAndHashCode(callSuper = true)
 public class Entretien extends Entity<EntretienId> {
 
-	private enum State {PENDING, CONFIRMED, CANCELED}
+	public enum State {PENDING, CONFIRMED, CANCELED}
 	
 	private final Candidat candidat;
 	private final ConsultantRecruteur consultantRecruteur;
