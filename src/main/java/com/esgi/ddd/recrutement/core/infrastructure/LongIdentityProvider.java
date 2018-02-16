@@ -1,6 +1,6 @@
-package com.esgi.ddd.recrutement.infrastructure;
+package com.esgi.ddd.recrutement.core.infrastructure;
 
-import com.esgi.ddd.recrutement.model.IdentityProvider;
+import com.esgi.ddd.recrutement.core.model.IdentityProvider;
 
 import java.util.concurrent.atomic.AtomicLong;
 

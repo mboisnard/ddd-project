@@ -1,6 +1,7 @@
 package com.esgi.ddd.recrutement.infrastructure;
 
-import com.esgi.ddd.recrutement.model.IdentityProvider;
+import com.esgi.ddd.recrutement.core.infrastructure.LongIdentityProvider;
+import com.esgi.ddd.recrutement.core.model.IdentityProvider;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

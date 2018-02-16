@@ -1,4 +1,4 @@
-package com.esgi.ddd.recrutement.model;
+package com.esgi.ddd.recrutement.core.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
