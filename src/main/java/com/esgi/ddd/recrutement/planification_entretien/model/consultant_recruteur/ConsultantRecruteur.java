@@ -1,7 +1,11 @@
-package com.esgi.ddd.recrutement.planification_entretien.model.entretien;
+package com.esgi.ddd.recrutement.planification_entretien.model.consultant_recruteur;
 
 import com.esgi.ddd.recrutement.core.model.Entity;
 import com.esgi.ddd.recrutement.planification_entretien.infrastructure.entretien.EntretienRepository;
+import com.esgi.ddd.recrutement.planification_entretien.model.profil.Profil;
+import com.esgi.ddd.recrutement.planification_entretien.model.candidat.Candidat;
+import com.esgi.ddd.recrutement.planification_entretien.model.creneau.Creneau;
+import com.esgi.ddd.recrutement.planification_entretien.model.entretien.Entretien;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -14,7 +18,7 @@ public class ConsultantRecruteur extends Entity<ConsultantRecruteurId> {
 	
 	private final Profil profil;
 	
-	ConsultantRecruteur(final ConsultantRecruteurId id, final String firstname, final String lastname, final Profil profil) {
+	public ConsultantRecruteur(final ConsultantRecruteurId id, final String firstname, final String lastname, final Profil profil) {
 		super(id);
 		
 		if(firstname == null || firstname.isEmpty())

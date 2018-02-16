@@ -1,7 +1,7 @@
 package com.esgi.ddd.recrutement.planification_entretien.infrastructure.consultant_recruteur;
 
-import com.esgi.ddd.recrutement.planification_entretien.model.entretien.ConsultantRecruteur;
-import com.esgi.ddd.recrutement.planification_entretien.model.entretien.ConsultantRecruteurId;
+import com.esgi.ddd.recrutement.planification_entretien.model.consultant_recruteur.ConsultantRecruteur;
+import com.esgi.ddd.recrutement.planification_entretien.model.consultant_recruteur.ConsultantRecruteurId;
 
 import java.util.HashMap;
 import java.util.List;

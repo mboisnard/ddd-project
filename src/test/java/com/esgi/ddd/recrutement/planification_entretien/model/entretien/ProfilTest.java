@@ -1,5 +1,6 @@
 package com.esgi.ddd.recrutement.planification_entretien.model.entretien;
 
+import com.esgi.ddd.recrutement.planification_entretien.model.profil.Profil;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
