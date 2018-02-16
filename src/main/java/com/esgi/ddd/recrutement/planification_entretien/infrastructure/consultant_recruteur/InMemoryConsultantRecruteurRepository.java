@@ -10,11 +10,11 @@ import java.util.Map.Entry;
 
 import static java.util.stream.Collectors.toList;
 
-public class InMemoryConsultantRecruteur implements ConsultantRecruteurRepository {
+public class InMemoryConsultantRecruteurRepository implements ConsultantRecruteurRepository {
 	
 	private final Map<ConsultantRecruteurId, ConsultantRecruteur> store;
 	
-	public InMemoryConsultantRecruteur() {
+	public InMemoryConsultantRecruteurRepository() {
 		store = new HashMap<>();
 	}
 	
