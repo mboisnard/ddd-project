@@ -1,11 +1,13 @@
 package com.esgi.ddd.recrutement.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public abstract class Entity<ID extends ValueObject> {
+@EqualsAndHashCode
+public abstract class Entity<ID extends EntityId> {
 
     private final ID id;
 }
