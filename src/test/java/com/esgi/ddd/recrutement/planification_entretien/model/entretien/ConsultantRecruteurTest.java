@@ -1,11 +1,16 @@
 package com.esgi.ddd.recrutement.planification_entretien.model.entretien;
 
+import com.esgi.ddd.recrutement.planification_entretien.infrastructure.entretien.EntretienRepository;
 import com.esgi.ddd.recrutement.planification_entretien.model.candidat.Candidat;
 import com.esgi.ddd.recrutement.planification_entretien.model.candidat.CandidatId;
 import com.esgi.ddd.recrutement.planification_entretien.model.consultant_recruteur.ConsultantRecruteur;
 import com.esgi.ddd.recrutement.planification_entretien.model.consultant_recruteur.ConsultantRecruteurId;
 import com.esgi.ddd.recrutement.planification_entretien.model.profil.Profil;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -23,6 +28,19 @@ public class ConsultantRecruteurTest {
     private final String OTHER_FIRSTNAME = "Matthew";
     private final String OTHER_LASTNAME = "McDough";
     private final Profil OTHER_PROFIL = new Profil("C#", 3.);
+
+    private class MockEntretienRepository implements EntretienRepository {
+        @Override
+        public List<Entretien> getAllByConsultantRecruteur(ConsultantRecruteur consultantRecruteur) {
+            final Entretien entretien = new Entretien();
+            return new ArrayList<>(Arrays.asList(entretien));
+        }
+
+        @Override
+        public Entretien save(Entretien entretien) {
+            return null;
+        }
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void whenFirstnameIsNullThenConsultantRecruteurShouldNotBeCreated() {
