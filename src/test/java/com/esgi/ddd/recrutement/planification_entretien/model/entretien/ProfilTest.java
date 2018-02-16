@@ -14,27 +14,27 @@ public class ProfilTest {
     private final String OTHER_SKILL = "Rust";
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateProfilWhenSkillIsNull() {
+    public void whenSkillIsNullThenProfilShouldNotBeCreated() {
         new Profil(null, MOCK_EXPERIENCE);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateProfilWhenSkillIsEmpty() {
+    public void whenSkillIsEmptyThenProfilShouldNotBeCreated() {
         new Profil("", MOCK_EXPERIENCE);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateProfilWhenExperienceIsNull() {
+    public void whenExperienceIsNullThenProfilShouldNotBeCreated() {
         new Profil(JAVA_SKILL, null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldNotCreateProfilWhenExperienceIsNegative() {
+    public void whenExperienceIsNegativeThenProfilShouldNotBeCreated() {
         new Profil(JAVA_SKILL, -1.);
     }
 
     @Test
-    public void shouldCreateProfil() {
+    public void whenAttributesAreValidThenProfilShouldBeCreated() {
         final Profil profil = new Profil(JAVA_SKILL, MOCK_EXPERIENCE);
 
         assertEquals(JAVA_SKILL, profil.getSkill());
@@ -42,7 +42,7 @@ public class ProfilTest {
     }
 
     @Test
-    public void shouldCompareIdentical() {
+    public void whenComparingProfilWithSameAttributesThenItShouldReturnTrue() {
         final Profil first = new Profil(JAVA_SKILL, MOCK_EXPERIENCE);
         final Profil second = new Profil(JAVA_SKILL, MOCK_EXPERIENCE);
 
@@ -50,7 +50,7 @@ public class ProfilTest {
     }
 
     @Test
-    public void shouldCompareNotIdentical() {
+    public void whenComparingProfilWithAtLeastOneDifferentAttributeThenItShouldReturnFalse() {
         final Profil origin = new Profil(JAVA_SKILL, MOCK_EXPERIENCE);
 
         final Profil differentSkill = new Profil(OTHER_SKILL, MOCK_EXPERIENCE);
