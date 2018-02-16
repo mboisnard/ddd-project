@@ -32,7 +32,7 @@ public class Entretien extends Entity<EntretienId> {
 		if (!consultantRecruteur.peutTester(candidat))
 			throw new IllegalStateException("consultantRecruteur cannot test candidat");
 		if(!consultantRecruteur.estDisponible(entretienRepository, creneau))
-			throw new  IllegalStateException("consultantRecruteur is not available");
+			throw new IllegalStateException("consultantRecruteur is not available");
 		
 		this.candidat = candidat;
 		this.consultantRecruteur = consultantRecruteur;
