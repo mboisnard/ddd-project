@@ -16,9 +16,9 @@ public class Creneau extends ValueObject {
 	private final Date endDate;
 	
 	public Creneau(final Date startDate, final Duration duration) {
-		if(startDate == null)
+		if (startDate == null)
 			throw new IllegalArgumentException("startDate cannot be null");
-		if(duration == null || duration.getSeconds() < 0)
+		if (duration == null || duration.getSeconds() < 0)
 			throw new IllegalArgumentException("duration cannot be null or negative");
 		
 		final Instant endInstant = startDate.toInstant().plus(duration);
