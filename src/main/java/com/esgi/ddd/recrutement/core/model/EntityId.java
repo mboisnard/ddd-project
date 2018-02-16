@@ -1,5 +1,8 @@
 package com.esgi.ddd.recrutement.core.model;
 
+import lombok.Getter;
+
+@Getter
 public abstract class EntityId extends ValueObject {
 	
 	private final Long id;

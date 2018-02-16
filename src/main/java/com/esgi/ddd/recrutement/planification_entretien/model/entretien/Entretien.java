@@ -2,8 +2,11 @@ package com.esgi.ddd.recrutement.planification_entretien.model.entretien;
 
 import com.esgi.ddd.recrutement.core.model.Entity;
 import com.esgi.ddd.recrutement.core.model.IdentityProvider;
-import com.esgi.ddd.recrutement.planification_entretien.ChercherConsultantRecruteur;
+import com.esgi.ddd.recrutement.planification_entretien.application.ChercherConsultantRecruteur;
 import com.esgi.ddd.recrutement.planification_entretien.infrastructure.entretien.EntretienRepository;
+import com.esgi.ddd.recrutement.planification_entretien.model.candidat.Candidat;
+import com.esgi.ddd.recrutement.planification_entretien.model.consultant_recruteur.ConsultantRecruteur;
+import com.esgi.ddd.recrutement.planification_entretien.model.creneau.Creneau;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
