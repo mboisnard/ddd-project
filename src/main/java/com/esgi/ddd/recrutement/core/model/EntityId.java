@@ -9,6 +9,9 @@ public abstract class EntityId extends ValueObject {
 	}
 	
 	public EntityId(final IdentityProvider<Long> identityProvider) {
+		if(identityProvider == null)
+			throw new IllegalArgumentException("identityProvider cannot be null");
+		
 		this.id = identityProvider.generate();
 	}
 }
