@@ -2,9 +2,6 @@ package com.esgi.ddd.recrutement.planification_entretien.model.entretien;
 
 import com.esgi.ddd.recrutement.core.model.Entity;
 import com.esgi.ddd.recrutement.planification_entretien.infrastructure.entretien.EntretienRepository;
-import com.esgi.ddd.recrutement.planification_entretien.model.Candidat;
-import com.esgi.ddd.recrutement.planification_entretien.model.ConsultantRecruteur;
-import com.esgi.ddd.recrutement.planification_entretien.model.Creneau;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -37,7 +34,5 @@ public class Entretien extends Entity<EntretienId> {
 		this.candidat = candidat;
 		this.consultantRecruteur = consultantRecruteur;
 		this.creneau = creneau;
-		
-		entretienRepository.save(this);
 	}
 }

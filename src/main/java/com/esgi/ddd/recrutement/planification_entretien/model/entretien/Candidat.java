@@ -1,4 +1,4 @@
-package com.esgi.ddd.recrutement.planification_entretien.model;
+package com.esgi.ddd.recrutement.planification_entretien.model.entretien;
 
 import com.esgi.ddd.recrutement.core.model.ValueObject;
 import lombok.EqualsAndHashCode;
@@ -6,14 +6,14 @@ import lombok.Getter;
 
 @Getter
 @EqualsAndHashCode(callSuper = false)
-abstract class Acteur extends ValueObject {
+public class Candidat extends ValueObject {
 	
 	private final String firstname;
 	private final String lastname;
 	
 	private final Profil profil;
 	
-	Acteur(final String firstname, final String lastname, final Profil profil) {
+	Candidat(final String firstname, final String lastname, final Profil profil) {
 		if(firstname == null || firstname.isEmpty())
 			throw new IllegalArgumentException("firstname cannot be null or empty");
 		if(lastname == null || lastname.isEmpty())

@@ -1,4 +1,4 @@
-package com.esgi.ddd.recrutement.planification_entretien.model;
+package com.esgi.ddd.recrutement.planification_entretien.model.entretien;
 
 import com.esgi.ddd.recrutement.core.model.ValueObject;
 import lombok.EqualsAndHashCode;
