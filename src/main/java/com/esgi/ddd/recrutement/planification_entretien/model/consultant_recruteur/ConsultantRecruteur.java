@@ -18,7 +18,7 @@ public class ConsultantRecruteur extends Entity<ConsultantRecruteurId> {
 	
 	private final Profil profil;
 	
-	ConsultantRecruteur(final ConsultantRecruteurId id, final String firstname, final String lastname, final Profil profil) {
+	public ConsultantRecruteur(final ConsultantRecruteurId id, final String firstname, final String lastname, final Profil profil) {
 		super(id);
 		
 		if(firstname == null || firstname.isEmpty())

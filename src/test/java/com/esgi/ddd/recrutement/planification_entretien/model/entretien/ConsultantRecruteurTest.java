@@ -1,5 +1,10 @@
 package com.esgi.ddd.recrutement.planification_entretien.model.entretien;
 
+import com.esgi.ddd.recrutement.planification_entretien.model.candidat.Candidat;
+import com.esgi.ddd.recrutement.planification_entretien.model.candidat.CandidatId;
+import com.esgi.ddd.recrutement.planification_entretien.model.consultant_recruteur.ConsultantRecruteur;
+import com.esgi.ddd.recrutement.planification_entretien.model.consultant_recruteur.ConsultantRecruteurId;
+import com.esgi.ddd.recrutement.planification_entretien.model.profil.Profil;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -7,6 +12,8 @@ import static org.junit.Assert.assertTrue;
 
 public class ConsultantRecruteurTest {
 
+    private final CandidatId MOCK_CANDIDAT_ID = new CandidatId(1L);
+    
     private final ConsultantRecruteurId MOCK_ID = new ConsultantRecruteurId(1L);
     private final String MOCK_FIRSTNAME = "John";
     private final String MOCK_LASTNAME = "Doe";
@@ -69,14 +76,14 @@ public class ConsultantRecruteurTest {
     
     @Test
     public void whenConsultantRecruteurHasDifferentProfilWithCandidatThenPeutTesterShouldBeFalse() {
-        final Candidat candidat = new Candidat(MOCK_FIRSTNAME, MOCK_LASTNAME, OTHER_PROFIL);
+        final Candidat candidat = new Candidat(MOCK_CANDIDAT_ID, MOCK_FIRSTNAME, MOCK_LASTNAME, OTHER_PROFIL);
 
         assertEquals(false, MOCK_CONSULTANT_RECRUTEUR.peutTester(candidat));
     }
 
     @Test
     public void whenConsultantRecruteurHasSameProfilWithCandidatThenPeutTesterShouldBeTrue() {
-        final Candidat candidat = new Candidat(MOCK_FIRSTNAME, MOCK_LASTNAME, MOCK_PROFIL);
+        final Candidat candidat = new Candidat(MOCK_CANDIDAT_ID, MOCK_FIRSTNAME, MOCK_LASTNAME, MOCK_PROFIL);
 
         assertEquals(true, MOCK_CONSULTANT_RECRUTEUR.peutTester(candidat));
     }
