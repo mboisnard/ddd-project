@@ -28,7 +28,7 @@ public class Creneau extends ValueObject {
 	}
 	
 	public boolean collidesWith(final Creneau creneau) {
-		return creneau.startDate.getTime() > this.startDate.getTime() && creneau.startDate.getTime() < this.endDate.getTime()
-			|| creneau.endDate.getTime() > this.startDate.getTime() && creneau.endDate.getTime() < this.endDate.getTime();
+		return creneau.getStartDate().getTime() <= this.endDate.getTime()
+			&& this.startDate.getTime() <= creneau.getEndDate().getTime();
 	}
 }
