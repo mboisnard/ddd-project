@@ -14,11 +14,11 @@ public class Candidat extends ValueObject {
 	private final Profil profil;
 	
 	Candidat(final String firstname, final String lastname, final Profil profil) {
-		if(firstname == null || firstname.isEmpty())
+		if (firstname == null || firstname.isEmpty())
 			throw new IllegalArgumentException("firstname cannot be null or empty");
-		if(lastname == null || lastname.isEmpty())
+		if (lastname == null || lastname.isEmpty())
 			throw new IllegalArgumentException("lastname cannot be null or empty");
-		if(profil == null)
+		if (profil == null)
 			throw new IllegalArgumentException("profil cannot be null");
 		
 		this.firstname = firstname;
