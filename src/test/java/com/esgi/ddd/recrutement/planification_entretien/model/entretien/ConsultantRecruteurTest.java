@@ -10,8 +10,10 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
+import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -32,8 +34,8 @@ public class ConsultantRecruteurTest {
     private class MockEntretienRepository implements EntretienRepository {
         @Override
         public List<Entretien> getAllByConsultantRecruteur(ConsultantRecruteur consultantRecruteur) {
-            final Entretien entretien = new Entretien();
-            return new ArrayList<>(Arrays.asList(entretien));
+            final Entretien entretien = null; //new Entretien();
+            return new ArrayList<>(singletonList(entretien));
         }
 
         @Override
